@@ -33,7 +33,8 @@ INSERT INTO Funcionario VALUES
 (2, "Gerente", "860.932.800-71", "17.850.589-4", "gerente@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2id$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$wFlUcZ1kKrGMTWXO8P+x5S73Xfhf07H0wsHBTuTFvvs", "GESTOR"),
 (3, "Vendedor", "869.610.750-02", "15.126.828-9", "vendedor@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2id$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$zREdkIBoIUB+GEr0VFUH3ZSk+bHpMvnICGVhWKkUE9k", "VENDEDOR"),
 (4, "Técnico", "684.797.770-10", "33.114.113-9", "tecnico@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2id$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$cShusbZt047FmuZCo6/A24OxPce2frHy3qf154I8U+E", "TÉCNICO"),
-(5, "Almoxarifado", "660.510.190-14", "25.381.208-2", "almoxarifado@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2id$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$AXdZKtuJJjFNKA8K1Z2q5UUsSQhz0U+5qrbuHXK1N24", "ALMOXARIFADO");
+(5, "Almoxarifado", "660.510.190-14", "25.381.208-2", "almoxarifado@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2id$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$AXdZKtuJJjFNKA8K1Z2q5UUsSQhz0U+5qrbuHXK1N24", "ALMOXARIFADO"),
+(6, "Superuser", "", "", "super@sucatronix.com", "(19) 1234-5678", "2019-06-06", "13330-000", "Rua Um", "2", "", "Bairro Três", "$argon2d$v=19$m=1024,t=1,p=1$c29tZXNhbHQ$pCHSywNQtybhSsAshuRFlkKOQVjNQU3R/0MBWZgxZss", "SUPERUSER");
 
 CREATE TABLE Fornecedor (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
