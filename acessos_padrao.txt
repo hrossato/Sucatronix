@@ -1,0 +1,5 @@
+admin@sucatronix.com / admin
+tecnico@sucatronix.com / tecnico
+gerente@sucatronix.com / gestor
+vendedor@sucatronix.com / vendedor
+almoxarifado@sucatronix.com / almoxarife
