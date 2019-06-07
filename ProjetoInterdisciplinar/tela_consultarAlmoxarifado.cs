@@ -17,14 +17,14 @@ namespace ProjetoInterdisciplinar {
             this.funcionario = funcionario;
             this.solicitacao = new Solicitacao();
             this.bindingSourceSolicitacao = new BindingSource() {
-                DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao) value).ToList()
+                DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" || this.funcionario.Tipo == "SUPERUSER" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao) value).ToList()
             };
             InitializeComponent();
         }
 
         private void Tela_consultarAlmoxarifado_Load(object sender, EventArgs e) {
             this.dataGridView1.DataSource = this.bindingSourceSolicitacao;
-            if (this.funcionario.Tipo != "ALMOXARIFADO") {
+            if (this.funcionario.Tipo != "ALMOXARIFADO" || this.funcionario.Tipo != "SUPERUSER") {
                 this.button2.Enabled = false;
                 this.button3.Enabled = false;
             }
@@ -39,7 +39,7 @@ namespace ProjetoInterdisciplinar {
                 tela_Almoxarifado Outroform = new tela_Almoxarifado(this.funcionario, ((Solicitacao)this.dataGridView1.SelectedRows[0].DataBoundItem).Id);
                 Outroform.ShowDialog();
                 Outroform.Activate();
-                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
+                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" || this.funcionario.Tipo == "SUPERUSER" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
                 this.bindingSourceSolicitacao.ResetBindings(false);
             }
         }
@@ -53,7 +53,7 @@ namespace ProjetoInterdisciplinar {
                     value.Key.Atualizar();
                 });
                 MessageBox.Show("Solicitação aprovada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
+                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" || this.funcionario.Tipo == "SUPERUSER" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
                 this.bindingSourceSolicitacao.ResetBindings(false);
             }
         }
@@ -63,7 +63,7 @@ namespace ProjetoInterdisciplinar {
             sol.Situacao = "Rejeitada";
             if (sol.Atualizar()) {
                 MessageBox.Show("Solicitação rejeitada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
+                this.bindingSourceSolicitacao.DataSource = (this.funcionario.Tipo == "ALMOXARIFADO" || this.funcionario.Tipo == "SUPERUSER" ? this.solicitacao.ConsultarTodos() : this.solicitacao.GetBySolicitante(this.funcionario.Id)).Select(value => (Solicitacao)value).ToList();
                 this.bindingSourceSolicitacao.ResetBindings(false);
             }
         }
